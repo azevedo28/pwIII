@@ -3,13 +3,13 @@ import { initializeApp } from 'firebase/app';
 import { getDatabase } from 'firebase/database';
 
 
-  const firebaseConfig = {
-  apiKey: "AIzaSyA22w78Ran_8At-yIUVIimGvUfx4m2kuJA",
-  authDomain: "pwiii-43485.firebaseapp.com",
-  projectId: "pwiii-43485",
-  storageBucket: "pwiii-43485.firebasestorage.app",
-  messagingSenderId: "963594949309",
-  appId: "1:963594949309:web:6f6c4eb8b352b6d31e9dd4"
+const firebaseConfig = {
+  apiKey: "AIzaSyDHvKlCbSDmCTeah1YDn1WDWFzxCKPSHk0",
+  authDomain: "pwiii-b305d.firebaseapp.com",
+  projectId: "pwiii-b305d",
+  storageBucket: "pwiii-b305d.firebasestorage.app",
+  messagingSenderId: "838654805952",
+  appId: "1:838654805952:web:f513f5c8568c642beeaa25"
 };
 
 const app = initializeApp(firebaseConfig);
