@@ -1,14 +1,14 @@
-// screens/EditScreen.js
 import React, { useState } from 'react';
 import { View, TextInput, Button } from 'react-native';
-import { database } from '../firebase';
+import { database } from './firebase';
 import { ref, update } from 'firebase/database';
 
-export default function EditScreen({ route, navigation }) {
+export default function Edit({ route, navigation }) {
   const { item } = route.params;
   const [nome, setNome] = useState(item.nome);
 
   const handleUpdate = () => {
+    if (nome.trim() === '') return;
     update(ref(database, `items/${item.id}`), { nome });
     navigation.goBack();
   };

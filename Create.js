@@ -1,13 +1,13 @@
-// screens/CreateScreen.js
 import React, { useState } from 'react';
 import { View, TextInput, Button } from 'react-native';
-import { database } from '../firebase';
+import { database } from './firebase';
 import { ref, push } from 'firebase/database';
 
-export default function CreateScreen({ navigation }) {
+export default function Create({ navigation }) {
   const [nome, setNome] = useState('');
 
-  const handleAdd = () => {
+  const handleCreate = () => {
+    if (nome.trim() === '') return;
     push(ref(database, 'items/'), { nome });
     navigation.goBack();
   };
@@ -15,12 +15,12 @@ export default function CreateScreen({ navigation }) {
   return (
     <View style={{ padding: 20 }}>
       <TextInput
-        placeholder="Nome"
+        placeholder="Digite o nome"
         value={nome}
         onChangeText={setNome}
         style={{ borderBottomWidth: 1, marginBottom: 10 }}
       />
-      <Button title="Salvar" onPress={handleAdd} />
+      <Button title="Salvar" onPress={handleCreate} />
     </View>
   );
 }
